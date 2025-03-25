@@ -1,6 +1,5 @@
-
 import { Link } from 'react-router-dom';
-import { Calendar, MapPin, Mountain, Users } from 'lucide-react';
+import { ArrowRight, Calendar, MapPin, Mountain, Users } from 'lucide-react';
 
 // Trek data
 const treks = [

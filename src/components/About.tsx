@@ -1,5 +1,5 @@
 
-import { Award, Heart, Mountain, Tree } from 'lucide-react';
+import { Award, Heart, Mountain, PalmTree } from 'lucide-react';
 
 const features = [
   {
@@ -13,7 +13,7 @@ const features = [
     description: "We prioritize your safety with comprehensive medical kits, oxygen supplies, and emergency evacuation protocols."
   },
   {
-    icon: <Tree className="h-10 w-10 text-forest-600" />,
+    icon: <PalmTree className="h-10 w-10 text-forest-600" />,
     title: "Sustainable Trekking",
     description: "We practice and promote eco-friendly trekking with a commitment to leave no trace and support local communities."
   },
