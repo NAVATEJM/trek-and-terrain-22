@@ -1,3 +1,4 @@
+
 import { Award, Heart, Mountain } from 'lucide-react';
 
 const features = [
