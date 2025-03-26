@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { MapPin, Calendar, Mountain, Users } from 'lucide-react';
 import Navigation from "@/components/Navigation";
@@ -197,11 +196,10 @@ const Treks = () => {
                 {currentPage > 1 && (
                   <PaginationItem>
                     <PaginationPrevious 
-                      href="#" 
                       onClick={(e) => {
                         e.preventDefault();
                         setCurrentPage(currentPage - 1);
-                      }} 
+                      }}
                     />
                   </PaginationItem>
                 )}
@@ -217,7 +215,6 @@ const Treks = () => {
                     return (
                       <PaginationItem key={pageNumber}>
                         <PaginationLink 
-                          href="#" 
                           isActive={pageNumber === currentPage}
                           onClick={(e) => {
                             e.preventDefault();
@@ -244,11 +241,10 @@ const Treks = () => {
                 {currentPage < totalPages && (
                   <PaginationItem>
                     <PaginationNext 
-                      href="#" 
                       onClick={(e) => {
                         e.preventDefault();
                         setCurrentPage(currentPage + 1);
-                      }} 
+                      }}
                     />
                   </PaginationItem>
                 )}
