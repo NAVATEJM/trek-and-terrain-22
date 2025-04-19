@@ -1,5 +1,5 @@
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { MapPin, Calendar, Mountain, Users } from 'lucide-react';
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
@@ -15,7 +15,7 @@ import {
 } from "@/components/ui/pagination";
 import { Link } from 'react-router-dom';
 
-// Expanded trek data with more treks
+// Expanded trek data with more treks and verified images
 const allTreks = [
   {
     id: 1,
@@ -113,6 +113,11 @@ const Treks = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const treksPerPage = 6;
   
+  // Scroll to top when the component mounts
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+  
   // Get current treks based on pagination
   const indexOfLastTrek = currentPage * treksPerPage;
   const indexOfFirstTrek = indexOfLastTrek - treksPerPage;
@@ -123,7 +128,7 @@ const Treks = () => {
     <div className="min-h-screen">
       <Navigation />
       
-      <section className="py-10 md:py-16 bg-stone-50">
+      <section className="py-24 md:py-32 bg-stone-50">
         <div className="container mx-auto px-6">
           <div className="mb-12 text-center">
             <h1 className="text-3xl md:text-5xl font-serif font-bold text-stone-800 mb-4">
@@ -139,7 +144,7 @@ const Treks = () => {
             {currentTreks.map((trek) => (
               <div 
                 key={trek.id}
-                className="bg-white rounded-lg overflow-hidden shadow-md hover-lift"
+                className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300"
               >
                 <div className="relative h-64 overflow-hidden">
                   <img 
@@ -201,6 +206,7 @@ const Treks = () => {
                       onClick={(e) => {
                         e.preventDefault();
                         setCurrentPage(currentPage - 1);
+                        window.scrollTo(0, 0);
                       }} 
                     />
                   </PaginationItem>
@@ -222,6 +228,7 @@ const Treks = () => {
                           onClick={(e) => {
                             e.preventDefault();
                             setCurrentPage(pageNumber);
+                            window.scrollTo(0, 0);
                           }}
                         >
                           {pageNumber}
@@ -248,6 +255,7 @@ const Treks = () => {
                       onClick={(e) => {
                         e.preventDefault();
                         setCurrentPage(currentPage + 1);
+                        window.scrollTo(0, 0);
                       }} 
                     />
                   </PaginationItem>

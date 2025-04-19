@@ -18,11 +18,6 @@ const Hero = () => {
       {/* Content */}
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-3xl animate-fade-in">
-          <img 
-            src="/lovable-uploads/f81f4baf-9008-4e89-9951-6f1a2ddd4f54.png" 
-            alt="Trek & Terrain Logo" 
-            className="w-48 h-48 mb-6"
-          />
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif font-bold text-white mb-6 leading-tight">
             Discover Your Next <br />Adventure With Us
           </h1>

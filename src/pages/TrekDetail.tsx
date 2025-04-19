@@ -1,5 +1,7 @@
-import { useParams, Link } from 'react-router-dom';
+
+import { useParams, Link, useNavigate } from 'react-router-dom';
 import { ArrowLeft, MapPin, Calendar, Mountain, Users } from 'lucide-react';
+import { useEffect } from 'react';
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { DifficultyBadge } from "@/components/TrekCard";
@@ -172,6 +174,12 @@ const allTreks = [
 const TrekDetail = () => {
   const { trekId } = useParams();
   const trek = allTreks.find(t => t.id === Number(trekId));
+  const navigate = useNavigate();
+  
+  // Scroll to top when component mounts
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [trekId]);
   
   const handleBookTrek = () => {
     const message = encodeURIComponent(`I am interested in ${trek?.title} trek. Can I know more details about it?`);
@@ -204,9 +212,9 @@ const TrekDetail = () => {
     <div className="min-h-screen">
       <Navigation />
       
-      <div className="bg-stone-50 pt-16">
+      <div className="bg-stone-50 pt-24">
         {/* Hero Image */}
-        <div className="relative w-full h-[60vh]">
+        <div className="relative w-full h-[50vh] md:h-[60vh]">
           <img 
             src={trek.image} 
             alt={trek.title} 
@@ -292,7 +300,7 @@ const TrekDetail = () => {
               
               {/* Sidebar */}
               <div className="lg:col-span-1">
-                <div className="bg-white p-6 rounded-lg shadow-sm sticky top-6">
+                <div className="bg-white p-6 rounded-lg shadow-sm sticky top-24">
                   <div className="text-center mb-6">
                     <h3 className="text-2xl font-serif font-bold text-forest-800 mb-1">
                       {trek.price}

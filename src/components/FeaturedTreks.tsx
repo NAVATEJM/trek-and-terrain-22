@@ -42,7 +42,6 @@ const FeaturedTreks = () => {
     <section className="section-padding bg-stone-50">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <h5 className="text-forest-600 font-medium mb-3 tracking-wider">POPULAR DESTINATIONS</h5>
           <h2 className="text-3xl md:text-4xl font-serif font-bold text-stone-800 mb-4">
             Featured Treks
           </h2>
