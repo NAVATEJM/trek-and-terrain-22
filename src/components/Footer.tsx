@@ -1,5 +1,5 @@
 
-import { Instagram, Mail, MapPin, Phone, WhatsApp } from 'lucide-react';
+import { Instagram, Mail, MapPin, Phone, MessageSquare } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Footer = () => {
@@ -31,7 +31,7 @@ const Footer = () => {
                 rel="noopener noreferrer"
                 className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors"
               >
-                <WhatsApp size={18} />
+                <MessageSquare size={18} />
               </a>
               <a 
                 href="mailto:trekandterrain@gmail.com"
