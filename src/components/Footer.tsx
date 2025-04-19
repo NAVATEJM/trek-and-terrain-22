@@ -1,14 +1,15 @@
 
-import { ArrowRight, Facebook, Instagram, Mail, MapPin, Phone, Twitter } from 'lucide-react';
+import { Instagram, Mail, MapPin, Phone, WhatsApp } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const whatsappMessage = encodeURIComponent("Hi, I am interested in knowing about the trek....");
 
   return (
     <footer className="bg-forest-900 text-white">
       <div className="container mx-auto px-6 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {/* Column 1 - About */}
           <div>
             <h3 className="font-serif text-2xl font-bold mb-4">Trek & Terrain</h3>
@@ -17,28 +18,26 @@ const Footer = () => {
             </p>
             <div className="flex space-x-4">
               <a 
-                href="https://facebook.com" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors"
-              >
-                <Facebook size={18} />
-              </a>
-              <a 
-                href="https://twitter.com" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors"
-              >
-                <Twitter size={18} />
-              </a>
-              <a 
-                href="https://instagram.com" 
+                href="https://www.instagram.com/trek_and_terrain?igsh=aWJmZmsyd2Y4d3Ro" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors"
               >
                 <Instagram size={18} />
+              </a>
+              <a 
+                href={`https://wa.me/918555079052?text=${whatsappMessage}`}
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors"
+              >
+                <WhatsApp size={18} />
+              </a>
+              <a 
+                href="mailto:trekandterrain@gmail.com"
+                className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-colors"
+              >
+                <Mail size={18} />
               </a>
             </div>
           </div>
@@ -48,34 +47,24 @@ const Footer = () => {
             <h4 className="font-bold text-lg mb-4">Quick Links</h4>
             <ul className="space-y-3">
               <li>
-                <Link to="/" className="text-forest-100 hover:text-white transition-colors flex items-center">
-                  <ArrowRight size={14} className="mr-2" />
+                <Link to="/treks" className="text-forest-100 hover:text-white transition-colors flex items-center">
                   Home
                 </Link>
               </li>
               <li>
-                <Link to="/treks" className="text-forest-100 hover:text-white transition-colors flex items-center">
-                  <ArrowRight size={14} className="mr-2" />
-                  Treks
-                </Link>
-              </li>
-              <li>
                 <Link to="/about" className="text-forest-100 hover:text-white transition-colors flex items-center">
-                  <ArrowRight size={14} className="mr-2" />
                   About Us
                 </Link>
               </li>
               <li>
-                <Link to="/faq" className="text-forest-100 hover:text-white transition-colors flex items-center">
-                  <ArrowRight size={14} className="mr-2" />
-                  FAQs
-                </Link>
-              </li>
-              <li>
-                <Link to="/contact" className="text-forest-100 hover:text-white transition-colors flex items-center">
-                  <ArrowRight size={14} className="mr-2" />
+                <a 
+                  href="https://wa.me/916303986469?text=Hi%20I%20am%20interested%20in%20knowing%20about%20the%20trek...."
+                  target="_blank"
+                  rel="noopener noreferrer" 
+                  className="text-forest-100 hover:text-white transition-colors flex items-center"
+                >
                   Contact
-                </Link>
+                </a>
               </li>
             </ul>
           </div>
@@ -87,46 +76,22 @@ const Footer = () => {
               <li className="flex items-start">
                 <MapPin size={18} className="mr-3 mt-1 text-forest-300" />
                 <span className="text-forest-100">
-                  123 Mountain View, <br />
-                  Himalaya Heights, <br />
-                  Uttarakhand, India
+                  IndraNagar, Nacharam, <br />
+                  Telengana-500076, <br />
+                  Hyderabad, India
                 </span>
               </li>
               <li className="flex items-center">
                 <Phone size={18} className="mr-3 text-forest-300" />
-                <span className="text-forest-100">+91 98765 43210</span>
+                <span className="text-forest-100">+91 8555079052</span>
               </li>
               <li className="flex items-center">
                 <Mail size={18} className="mr-3 text-forest-300" />
-                <a href="mailto:info@trekandterrain.com" className="text-forest-100 hover:text-white transition-colors">
-                  info@trekandterrain.com
+                <a href="mailto:trekandterrain@gmail.com" className="text-forest-100 hover:text-white transition-colors">
+                  trekandterrain@gmail.com
                 </a>
               </li>
             </ul>
-          </div>
-
-          {/* Column 4 - Newsletter */}
-          <div>
-            <h4 className="font-bold text-lg mb-4">Newsletter</h4>
-            <p className="text-forest-100 mb-4 text-sm">
-              Subscribe to our newsletter for the latest trek updates and exclusive offers.
-            </p>
-            <form className="space-y-3">
-              <div className="relative">
-                <input 
-                  type="email" 
-                  placeholder="Your email address" 
-                  className="w-full px-4 py-2 rounded-md bg-white/10 border border-white/20 text-white placeholder:text-forest-300 focus:outline-none focus:ring-2 focus:ring-forest-400"
-                  required
-                />
-              </div>
-              <button 
-                type="submit" 
-                className="w-full bg-forest-500 hover:bg-forest-600 text-white px-4 py-2 rounded-md transition-colors"
-              >
-                Subscribe
-              </button>
-            </form>
           </div>
         </div>
 
