@@ -47,18 +47,13 @@ const Footer = () => {
             <h4 className="font-bold text-lg mb-4">Quick Links</h4>
             <ul className="space-y-3">
               <li>
-                <Link to="/treks" className="text-forest-100 hover:text-white transition-colors flex items-center">
+                <Link to="/" className="text-forest-100 hover:text-white transition-colors flex items-center">
                   Home
                 </Link>
               </li>
               <li>
-                <Link to="/about" className="text-forest-100 hover:text-white transition-colors flex items-center">
-                  About Us
-                </Link>
-              </li>
-              <li>
                 <a 
-                  href="https://wa.me/916303986469?text=Hi%20I%20am%20interested%20in%20knowing%20about%20the%20trek...."
+                  href="https://wa.me/918555079052?text=Hi%20I%20am%20interested%20in%20knowing%20about%20the%20trek...."
                   target="_blank"
                   rel="noopener noreferrer" 
                   className="text-forest-100 hover:text-white transition-colors flex items-center"

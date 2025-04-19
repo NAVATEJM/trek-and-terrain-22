@@ -1,11 +1,9 @@
-
 import { useParams, Link } from 'react-router-dom';
 import { ArrowLeft, MapPin, Calendar, Mountain, Users } from 'lucide-react';
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { DifficultyBadge } from "@/components/TrekCard";
 
-// Using the same trek data from Treks.tsx
 const allTreks = [
   {
     id: 1,
@@ -175,6 +173,11 @@ const TrekDetail = () => {
   const { trekId } = useParams();
   const trek = allTreks.find(t => t.id === Number(trekId));
   
+  const handleBookTrek = () => {
+    const message = encodeURIComponent(`I am interested in ${trek?.title} trek. Can I know more details about it?`);
+    window.open(`https://wa.me/918555079052?text=${message}`, '_blank');
+  };
+  
   if (!trek) {
     return (
       <div className="min-h-screen">
@@ -201,9 +204,9 @@ const TrekDetail = () => {
     <div className="min-h-screen">
       <Navigation />
       
-      <div className="bg-stone-50">
+      <div className="bg-stone-50 pt-16">
         {/* Hero Image */}
-        <div className="relative h-[40vh] md:h-[60vh] w-full">
+        <div className="relative w-full h-[60vh]">
           <img 
             src={trek.image} 
             alt={trek.title} 
@@ -302,12 +305,12 @@ const TrekDetail = () => {
                     <p className="text-stone-600">{trek.season}</p>
                   </div>
                   
-                  <a 
-                    href="#" 
+                  <button 
+                    onClick={handleBookTrek}
                     className="block w-full bg-forest-600 hover:bg-forest-700 text-white text-center py-3 px-4 rounded-lg font-medium transition-colors"
                   >
                     Book This Trek
-                  </a>
+                  </button>
                   
                   <div className="mt-6 text-center">
                     <Link 
